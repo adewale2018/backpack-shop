@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <div class="item">
       <h2>{{ item }}</h2>
       <img :src="url" width="235" height="300" />
@@ -10,7 +10,7 @@
       </div>
       <button class="submit">Submit</button>
     </div>
-  </div>
+
 </template>
 
 <script>
