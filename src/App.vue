@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Vue.js Projects</h1>
     <div class="app">
       <div class="unit" v-for="(unit, i) in manifest" :key="i">
         <child :item="unit.item" :url="unit.url"></child>
@@ -75,6 +76,12 @@ export default {
 <style>
 body,
 html {
+  font-family: "PT Serif", serif;
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
   font-family: "PT Serif", serif;
 }
 .app {
