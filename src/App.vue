@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <h1>Vue.js Projects</h1>
+    <div class="app1">
+      <div class="body-1">
+        <bounce-ball></bounce-ball>
+      </div>
+    </div>
     <div class="app">
       <div class="unit" v-for="(unit, i) in manifest" :key="i">
         <child :item="unit.item" :url="unit.url"></child>
@@ -21,11 +26,13 @@
 <script>
 import Child from "./components/Child";
 import Place from "./components/Place";
+import BounceBall from "./components/BounceBall";
 
 export default {
   components: {
     Child,
-    Place
+    Place,
+    BounceBall
   },
   name: "app",
   data() {
@@ -120,4 +127,34 @@ h1 {
   margin: 10px;
   align-self: center;
 }
+/* from here */
+.app1 {
+  text-align: center;
+  margin: 60px;
+  max-width: 320px;
+  margin: 0 auto;
+  display: table;
+}
+.body-1 {
+  font-family: "Bitter", serif;
+  width: 100vw;
+  height: 100vh;
+  background: #eeeeee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eeeeee),
+    color-stop(65%, #cccccc),
+    color-stop(99%, #eeeeee)
+  );
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 65%, #eeeeee 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 );
+  /* IE6-9 */
+}
+/* to here */
 </style>
